@@ -3,10 +3,7 @@
 
 using System;
 using System.Collections.Generic;
-using System.IdentityModel.Tokens;
-using System.Security.Claims;
-using System.Security.Cryptography;
-using System.ServiceModel.Security.Tokens;
+using Microsoft.IdentityModel.Tokens;
 using Microsoft.Owin.Security.Jwt;
 using Shouldly;
 using Xunit;
@@ -71,9 +68,9 @@ namespace Microsoft.Owin.Security.Tests
 
             public virtual string Issuer { get; private set; }
 
-            public virtual IEnumerable<SecurityToken> SecurityTokens
+            public virtual IEnumerable<System.IdentityModel.Tokens.SecurityToken> SecurityTokens
             {
-                get { return new SecurityToken[0]; }
+                get { return new System.IdentityModel.Tokens.SecurityToken[0]; }
             }
         }
     }

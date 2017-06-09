@@ -4,9 +4,9 @@
 using System;
 using System.Collections.Generic;
 using System.Diagnostics.CodeAnalysis;
-using System.IdentityModel.Tokens;
 using System.Net.Http;
 using System.Threading;
+using System.IdentityModel.Tokens;
 using Microsoft.Owin.Security.Jwt;
 
 namespace Microsoft.Owin.Security.ActiveDirectory
@@ -81,6 +81,7 @@ namespace Microsoft.Owin.Security.ActiveDirectory
             }
         }
 
+        [SuppressMessage("Microsoft.Design", "CA1031:DoNotCatchGeneralExceptionTypes", Justification = "Can't throw exceptions on a background thread.")]
         private void RefreshMetadata()
         {
             if (_syncAfter >= DateTimeOffset.UtcNow)
