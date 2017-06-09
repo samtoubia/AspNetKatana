@@ -4,9 +4,9 @@
 using System;
 using System.Collections.Generic;
 using System.Diagnostics.CodeAnalysis;
+using System.IdentityModel.Tokens;
 using System.Net.Http;
 using System.Threading;
-using System.IdentityModel.Tokens;
 using Microsoft.Owin.Security.Jwt;
 
 namespace Microsoft.Owin.Security.ActiveDirectory
